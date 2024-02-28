@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <script>
+            function displayLocation(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(showposition,showerrormessage);
+                    //navigator.geolocation.watchPosition(showposition,showerrormessage);
+                }
+                else{
+                    document.getElementById("myloc").innerHTML="location nott supported by browser";
+                }
+            }
+
+            function showposition(position){
+                console.log(position);
+                document.getElementById("myloc").innerHTML="Latitude: "+position.coords.latitude+" <br>longitude"+position.coords.longitude;
+            }
+
+            function showerrormessage(){
+                document.getElementById("myloc").innerHTML="error occured";
+            }
+        </script>
+        <button type="button" name="btn" id="btn" onclick="displayLocation()">get location details</button>
+        <p id="myloc"></p>
+    </body>
+</html>
