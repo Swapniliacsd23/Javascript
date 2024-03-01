@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <script>
+            arr=[{id:11,
+                name:"kishori",
+                address:"baner"
+            },{
+                id:12,
+                name:"kishori",
+                address:"baner"
+                }]
+            alert(arr[1].name);
+            p1={"id":11,
+                "name":"kishori",
+                "address":"Baner"
+            };
+            alert(typeof(p1));
+            alert(p1.id+"  "+p1.name+"  "+p1.address);
+            console.log(p1);
+            jsonob=JSON.stringify(p1);
+            alert(jsonob);
+            //to convert JSON into javascript object
+            ob=JSON.parse(jsonob);
+            alert(ob);
+        </script>
+    </body>
+</html>
