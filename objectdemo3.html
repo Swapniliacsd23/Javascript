@@ -1,0 +1,45 @@
+<html>
+    <body>
+        <script>
+            //create empty object
+            var ob={};
+            var ob1=Object.create(null);
+
+            //using constructor function
+            var Person=function(id,nm,address){
+                this.id=id;
+                this.name=nm;
+                this.address=address;
+                this.display=function(){
+                    document.write("id : "+this.id+"Name : "+this.name+"address : "+this.address);
+                }
+            }
+            var Employee=function(dept,desg,projects){
+                this.dept=dept;
+                this.desg=desg;
+                this.projects=projects;
+            }
+            p1=new Person(12,"Revati","Aundh");
+            //new properties can be added in object after creation 
+            p1.mobile=999999;
+            console.log(p1);
+            p1.display();
+            emp1=new Employee("HR","Manager",['project1','project2','project3']);
+             //__proto__ will make p1 as parent for emp1
+            emp1.__proto__=p1;//using this property we can use inheritence
+            //emp1=Object.create(p1);
+            //emp2.__proto__=p1;
+            //object for loop
+
+            console.log(emp1);
+            for ( var p in emp1){
+                if(emp1.hasOwnProperty(p)){
+                console.log(`${p}---->${emp1[p]}---->${typeof(emp1[p])}`);
+                }
+                else{
+                    console.log(`${p}---->${emp1[p]}---->${typeof(emp1[p])}`);
+                }
+            }
+        </script>
+    </body>         
+</html>
