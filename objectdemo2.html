@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <script>
+            p1 = {
+            "id":11,
+            "name":"kishori",
+            "address":"Baner",
+            hobbies:["reading","biking"],
+            projects:[{pname:"lic",years:23},{pname:"banking",years:23}],
+            dept:{did:100,dname:"HR"}
+            };
+            
+            console.log(p1.dept.did+"----"+p1.name+"----"+p1.projects[0].years);
+            //using constructor function
+            var Person=function(id,nm,address){
+                this.id=id;
+                this.name=nm;
+                this.address=address;
+                this.display=function(){
+                    document.write("id : "+this.id+"Name : "+this.name+"address : "+this.address);
+                }
+            }
+            var Employee=function(dept,desg){
+                this.dept=dept;
+                this.desg=desg;
+            }
+            p1=new Person(12,"Revati","Aundh");
+            //new properties can be added in object after creation 
+            p1.mobile=999999;
+            console.log(p1);
+            p1.display();
+            console.log(p1.mobile+"----"+p1["mobile"]);
+            emp1=new Employee("HR","Manager");
+
+            emp1.__proto__=p1;//using this property we can use inheritence
+            console.log("after assigning proto property")
+            console.log(emp1);
+            emp2=new Person(13,"Atharva");
+            console.log(emp2);
+        </script>
+    </body>
+</html>
