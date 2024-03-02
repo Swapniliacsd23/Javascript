@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            function adddata(){
+                if (typeof(Storage)!==undefined){
+                    nm=document.getElementById("uname").value;{
+                    localStorage.setItem("name",nm);
+                    if(localStorage.count!=undefined){
+                        localStorage.count=parseInt(localStorage.count)+1;
+                    }else{
+                        localStorage.count=1;
+                    }
+                    document.getElementById("mydiv").innerHTML="you clicked"+localStorage.count+"times";
+                    }
+                }
+            }
+            function deletedata(){
+                localStorage.removeItem("count");
+                localStorage.removeItem("name");
+            }
+            function getdata(){
+              var cnt=localStorage.count;
+              var nm = localStorage.name;
+              alert(cnt+","+nm)
+            }
+        </script>
+    </head>
+    <body>
+        username: <input type="text" name="uname" id="uname">
+        <button type="button" name="btn" id="btn1" onclick="adddata()">add to localstorage</button>
+        <button type="button" name="btn" id="btn2" onclick="deletedata()">remove from localstorage</button>
+        <button type="button" name="btn" id="btn3" onclick="getdata()">display from localstorage</button>
+        <div id="mydiv"></div>
+    </body>
+</html>
