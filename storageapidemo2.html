@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            function adddata(){
+                if (typeof(Storage)!==undefined){
+                    nm=document.getElementById("uname").value;{
+                    sessionStorage.setItem("name",nm);
+                    if(sessionStorage.count!=undefined){
+                        sessionStorage.count=parseInt(sessionStorage.count)+1;
+                    }else{
+                        sessionStorage.count=1;
+                    }
+                    document.getElementById("mydiv").innerHTML="you clicked"+sessionStorage.count+"times";
+                    }
+                }
+            }
+            function deletedata(){
+                sessionStorage.removeItem("count");
+                sessionStorage.removeItem("name");
+            }
+            function getdata(){
+              var cnt = sessionStorage.count;
+              var nm = sessionStorage.name;
+              alert(cnt+","+nm)
+            }
+        </script>
+    </head>
+    <body>
+        username: <input type="text" name="uname" id="uname">
+        <button type="button" name="btn" id="btn1" onclick="adddata()">add to sessionstorage</button>
+        <button type="button" name="btn" id="btn2" onclick="deletedata()">remove from sessionstorage</button>
+        <button type="button" name="btn" id="btn3" onclick="getdata()">display from sessionstorage</button>
+        <div id="mydiv"></div>
+    </body>
+</html>
