@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function showDate(){
+                dt=new Date();
+                alert(typeof(dt));
+                document.getElementById("mydiv").innerHTML=dt;
+                date1=dt.getDate();
+                day=dt.getDay();
+                month=dt.getMonth();
+                year=dt.getFullYear();
+                alert(`${date1}-${month+1}-${year}`);
+            }
+        </script>
+    </head>
+    <body onload="showDate()">
+        <div id="mydiv"></div>
+    </body>
+</html>
