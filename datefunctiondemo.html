@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <script>
+            let dt=new Date("2023-11-2");
+            alert(dt);
+
+            //let dt1=new Date(year,month,day,hours,mins,secs,ms);
+            let dt1=new Date(2023,11,2,0,0,0,0);
+            alert(dt1);
+
+            dt1=new Date("2022-03-24");
+            let dt2=new Date("2023-03-24");
+            diff=dt2.getTime()-dt1.getTime();
+            //1000*3600*24 will be number of milliseconds in a day
+            days=diff/(1000*3600*24);
+            alert(days);
+            alert(dt2-dt1);
+        </script>
+        <input type="date" name="dt" id="dt">
+    </body>
+</html>
