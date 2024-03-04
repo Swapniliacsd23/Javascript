@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            .errclass{
+                border: 2px solid red;
+            }
+            .myclass{
+                border: 2px solid green;
+            }
+        </style>
+        <script src="./js1/validateloginform.js">
+        </script>
+    </head>
+    <body>
+        <table>
+            <form onsubmit="return validatedata()">
+                <tr>
+                    <td>Username : </td>
+                    <td><input type="text" name="uname" id="uname"></td>
+                    <td id="unameerr"></td>
+                </tr>        
+                <tr>
+                    <td>Password : </td>
+                    <td><input type="password" name="pass" id="pass"></td>
+                    <td id="passerr"></td>
+                </tr> 
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" name="show" id="show" onchange="showpass()">Show password</td>
+                    <td id="passerr"></td>
+                </tr>   
+                <tr>
+                    <td></td>
+                    <td><button type="submit" name="btn">Login</button></td>
+                    <td></td>
+                </tr>
+            </form>
+        </table>
+    </body>
+</html>
