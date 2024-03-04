@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <script>
+            function f1(a){
+                return a>20;
+            }
+            arr=new Array(10,20,30,40,50,"a","b");
+            //arr.push(20);
+            document.write(arr.find((x,index,arr)=>{
+            console.log(x);
+            return x>20;
+            }))
+            document.write(arr.find(x=>x>20)+",<br>");
+            document.write(arr.findIndex(x=>x>20));
+            document.write("filter - finds all numbers "+arr.filter((x,index)=>{
+            console.log(index+"---->"+x);
+            return x>15 && x%4==0;
+            }));
+            for(var i=0;i<arr.length;i++){
+                document.write(arr[i]+"<br>")
+            }
+
+            for(var x of arr){
+                document.write(x+"<br>")
+            }
+
+            arr.forEach((x) => {
+                document.write(x+"<br>")
+            });
+
+            arr=[10,20,30]
+            arr1=(arr.map(x=>x*x));
+            document.write(arr1);
+
+            //arr.reduce(callback(accumulator,currentvalue,currentindex,array),initialvalue)
+            document.write("reduce to sum of values "+arr.reduce((x,y)=>x+y,0))
+        </script>
+    </body>
+</html>
