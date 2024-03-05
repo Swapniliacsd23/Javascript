@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .myc{
+            display: none;
+        }
+        .display{
+            display: block;
+        }
+        .myclass{
+            background-color: cyan;
+        }
+    </style>
+    <script src="./script/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#show').change(function(){
+                $('label').toggleClass("myclass");
+                if($(this).is(":checked")){
+                    $('#mydiv').addClass("display");
+                    $('#mydiv').removeClass("myc");
+                }else{
+                    $('#mydiv').removeClass("display");
+                    $('#mydiv').addClass("myc");
+                }
+            });
+        });
+
+        $('#myp').hover(function(){
+            $('#myp').css("font-size","50px");
+            $('#myp').addClass("myclass");
+        },function(){
+            $('#myp').css("font-size","20px");
+            $('#myp').removeClass("myclass");
+        })
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="show" id="show" value="show">
+    <label for="show">select to see the data</label>
+    <div id="mydiv" class="myc">
+    <pre>
+        This is div which is visible when you checkbox
+        the checkbox
+        otherwise it will be hidden
+    </pre>
+    </div>
+    <p id="myp">This is para</p>
+</body>
+</html>
