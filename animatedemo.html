@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+    #div1{
+        background-color: cyan;
+        border: 1px solid red;
+        border-radius: 20px;
+        height: 200px;
+        width: 200px;
+    }
+    #div2{
+        background-color: yellow;
+        border: 1px solid red;
+        border-radius: 20px;
+        height: 200px;
+        width: 200px;
+    }
+    .myclass{
+        font-size: 40px;
+    }
+   </style>
+   <script src="script/jquery.js"></script>
+   <script>
+        $(document).ready(function(){
+            //when you want to use execute multiple function one after the another
+            //then we use method chaining 
+            $('#animate').click(function(){
+                $('#div1')
+                .css('color','red')
+                .addClass("myclass")
+                .animate({
+                    "margin":"100px",
+                    "width":"500px",
+                    "opacity":"0.5"
+                },3000,function(){
+                    alert("animation done");
+                }).css('color','black');
+
+            });
+        });
+   </script>
+</head>
+<body>
+    <button type="button" name="btn1" id="animate">animate</button>
+    <button type="button" name="btn2" id="hide">hide</button>
+    <button type="button" name="btn3" id="toggle">toggle</button>
+    <p id="myp"></p>
+    <div id="div1">
+        <p>This <span>is</span> p1</p>
+        <p>This is p2</p>
+        <p>This is p3</p>
+        <p>This is p4</p>
+       </div> 
+       <div id="div2">
+        <p>This <span>is</span> p1 3748273487</p>
+        <p>This is p2 2348274387238</p>
+        <p>This is p3 9465465468</p>
+        <p>This is p4 4681646611</p>
+       </div>
+</body>
+</html>
