@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <script>
+            var cnt;
+            (function(){
+                alert("in self calling function, will be called only once")
+                cnt=0;
+            })();
+            function f1(){
+                a=10;
+                b=20;
+                function f2(){
+                    return a+b;
+                }
+                s=f2();
+                alert("addition is : "+s);
+                f=f2();
+                return f;
+            }
+            addition=f1();
+            console.log(addition);
+        </script>
+    </body>
+</html>
