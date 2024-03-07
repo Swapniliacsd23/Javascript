@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+            function displaymessage(){
+                window.alert("This is alert window which shows only OK button");
+                //confirm
+                ans=window.confirm("This is confirm window");
+                if(ans){
+                    alert("you selected OK"+ans);
+                }
+                else{
+                    alert("you selected Cancel"+ans);
+                }
+                //prompt box is message + text box
+                num1=prompt("enter the number");
+                num2=prompt("enter the number");
+                alert("addition: "+num1+num2);
+            }
+        </script>
+    </head>
+    <body>
+        
+        <button type="button" name="btn" onclick="displaymessage()">click me</button>
+    </body>
+</html>
