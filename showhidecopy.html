@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+    #div1{
+        background-color: cyan;
+        border: 1px solid red;
+        border-radius: 20px;
+        height: 200px;
+        width: 200px;
+    }
+
+    #div2{
+        background-color: yellow;
+        border: 1px solid red;
+        border-radius: 20px;
+        height: 200px;
+        width: 200px;
+    }
+    
+   </style>
+   <script src="script/jquery.js"></script>
+   <script>
+        $(document).ready(function(){
+          $('#show').change(function(){
+            if($('#show').is(':checked')){
+              $('#div1').show(2000,function(){
+                alert($('input:radio[name="animate"]:checked').val());
+              });
+            }else{
+                alert("show not selected")
+            }
+            
+          });  
+          $('#hide').change(function(){
+            if($('#hide').is(':checked')){
+              $('#div1').hide(2000,function(){
+                alert($('input:radio[name="animate"]:checked').val());
+              });
+            }else{
+                alert("show not selected")
+            }
+            
+          }); 
+          $('#toggle').change(function(){
+            if($('#toggle').is(':checked')){
+              $('#div1').toggle(2000,function(){
+                alert($('input:radio[name="animate"]:checked').val());
+              });
+            }else{
+                alert("show not selected")
+            }
+            
+          });
+        })
+    </script>
+</head>
+<body>
+
+    <div id="div1">
+        <img src="../images/download (1).jpeg" width="200px" height="200px">
+       </div>
+    <div id="div2">
+        <input type="radio" name="animate" id="show" value="show">Show
+        <input type="radio" name="animate" id="hide" value="hide">hide
+        <input type="radio" name="animate" id="toggle" value="toggle">toggle
+
+       </div> 
+</body>
+</html>
