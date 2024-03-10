@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./script/jquery.js"></script>
+    <script>
+        var hobbies=[];
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                $('input[type=checkbox]').each(function(index){
+                if($(this).is(":checked")){
+                    hobbies.push($(this).val());
+
+                }
+            });
+            console.log(hobbies);
+        })
+        })
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="hobbies" id="reading" value="reading"><label for="reading">Reading</label>
+    <input type="checkbox" name="hobbies" id="biking" value="biking"><label for="biking">Biking</label>
+    <input type="checkbox" name="hobbies" id="singing" value="singing"><label for="singing">Singing</label>
+    <input type="checkbox" name="hobbies" id="gaming" value="gaming"><label for="gaming">Gaming</label>
+    <input type="checkbox" name="hobbies" id="dancing" value="dancing"><label for="dancing">Dancing</label>
+    <input type="checkbox" name="hobbies" id="learning" value="learning"><label for="learning">Learning</label>
+    <button type="button" name="btn1" id="btn1">add hobbies</button>
+</body>
+</html> 
