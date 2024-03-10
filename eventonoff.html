@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./script/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").one("click",function(){
+                $("#mydiv").append("<input type='text'>");
+            })
+            $("#btn2").click(function(){
+                $(':input[type=text]').on("focus",function(){
+                    $(this).css({
+                        "background-color": "yellow",
+                        "border": "2px solid red"
+                    });
+                })
+                $(':input[type=text]').on("blur",function(){
+                    $(this).css({
+                        "background-color": "white",
+                        "border": "2px solid black"
+                    });
+                })
+            })
+            $("#btn3").click(function(){
+                $(':input').off("focus",function(){
+                    $(this).css({
+                        "background-color": "yellow",
+                        "border": "2px solid red"
+                    });
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="btn1">add input text box</button>
+    <button type="button" name="btn" id="btn2">assign event</button>
+    <button type="button" name="btn" id="btn3">remove event</button>
+    <div id="mydiv"></div>
+</body>
+</html>
