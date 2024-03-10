@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            .myc{
+                display:none;
+            }
+            .myclass{
+                display: block;
+            }
+        </style>
+        <script src="./script/jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+               $('#btn1').click(function(){
+                var nm=$('#nm').val()
+                if(nm.trim().length==0){
+                    $('#nm').after("<span id='errnm'>name cannot be blank</span>");
+                }else{
+                    $('#errnm').remove();
+                }
+               });
+
+               $('#btn2').click(function(){
+                    // in this we have taken one div tag so we can also take without div id
+                    //otherwise if multiple div tags are there then we take div id
+                    $('#div1').append("<p class='m1'>this is para</p>")
+               });
+
+               $('#btn3').click(function(){
+                    $('#div1').prepend("<p class='m2'>this is para</p>")
+               });
+
+               $('#btn4').click(function(){
+                    $('p').remove('.m1')
+               });
+
+               $('#btn5').click(function(){
+                    $('p').remove('.m2')
+               });
+            }) 
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+        Name : <input type="text" name="name" id="nm"><br><br> Address : <input type="text" name="address" id="address"><br><br>
+        <button type="button" name="btn" id="btn1">validate form</button>
+        <button type="button" name="btn" id="btn2">append para</button>
+        <button type="button" name="btn" id="btn3">prepend para</button>
+        <button type="button" name="btn" id="btn4">remove append para</button>
+        <button type="button" name="btn" id="btn5">remove prepend para</button>
+        </div>
+    </body>
+</html>
