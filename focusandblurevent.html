@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./script/jquery.js"></script>
+    <script>
+        $(document).ready(
+            function(){
+            $(':input[type=text]').focus(function(){
+                $(this).css({"background-color":"yellow","color":"red","border":"1px solid red"});
+            });
+            $(':input[type=text]').blur(function(){
+                $(this).css({"background-color":"white","color":"black"});
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="text" name="nm" id="nm1">
+    <input type="text" name="nm" id="nm2">
+    <input type="text" name="nm" id="nm3">
+    <input type="text" name="nm" id="nm4">
+    <input type="text" name="nm" id="nm5">
+</body>
+</html>
